@@ -1,0 +1,1628 @@
+
+package þirinler;
+
+
+public class Azman extends Dusman {
+    
+
+    public Azman(int ID, String Ad, String Tur) {
+        super(ID, Ad, Tur);
+         this.hasarGucu = 5;
+    }
+    
+     public Azman(){}
+
+    public int getAdimSayisi() {return adimSayisi;}
+    public void setAdimSayisi(int adimSayisi) {this.adimSayisi = adimSayisi;}
+    public int getHasarGucu() {return hasarGucu;}
+    public void setHasarGucu(int hasarGucu) {this.hasarGucu = hasarGucu;}
+
+    @Override
+    public int getDusmanID() {return super.getDusmanID();}
+
+    @Override
+    public void setDusmanID(int dusmanID) {super.setDusmanID(dusmanID) ;}
+
+    public String getDusmanAd() {return dusmanAd;}
+
+    public void setDusmanAd(String dusmanAd) {this.dusmanAd = dusmanAd;}
+
+    public String getDusmanTur() {return dusmanTur;}
+
+    public void setDusmanTur(String dusmanTur) {
+        this.dusmanTur = dusmanTur;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getAd() {
+        return Ad;
+    }
+
+    public void setAd(String Ad) {
+        this.Ad = Ad;
+    }
+
+    public String getTur() {
+        return Tur;
+    }
+
+    public void setTur(String Tur) {
+        this.Tur = Tur;
+    }
+
+    public int getLokX() {
+        return lokX;
+    }
+
+    public void setLokX(int lokX) {
+        this.lokX = lokX;
+    }
+
+    public int getLokY() {
+        return lokY;
+    }
+
+    public void setLokY(int lokY) {
+        this.lokY = lokY;
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+// 
+
+
+package þirinler;
+
+
+public class Dusman extends Karakter {
+    
+    private int dusmanID;
+    String dusmanAd;
+    String dusmanTur;
+    
+     int hasarGucu = 5;
+    
+     public Dusman(int ID, String Ad, String Tur) {
+        super(ID, Ad, Tur);
+        this.dusmanID = ID;
+        this.dusmanAd = Ad;
+        this.dusmanTur = Tur;
+    }
+ 
+     public Dusman() { }
+     
+    public int getDusmanID() {return dusmanID;}
+    public void setDusmanID(int dusmanID) {this.dusmanID = dusmanID;}
+    public String getDusmanAd() {return dusmanAd;}
+    public void setDusmanAd(String dusmanAd) { this.dusmanAd = dusmanAd;}
+    public String getDusmanTur() {return dusmanTur;}
+    public void setDusmanTur(String dusmanTur) { this.dusmanTur = dusmanTur;}
+    public int getHasarGucu() {return hasarGucu;}
+    public void setHasarGucu(int hasarGucu) {this.hasarGucu = hasarGucu;}
+   
+   
+
+   
+    
+    
+    
+}
+
+
+ 
+
+
+//
+
+
+
+
+
+
+package þirinler;
+
+
+public class Gargamel extends Dusman {
+    
+  
+
+
+    public Gargamel(int ID, String Ad, String Tur) {
+        super(ID, Ad, Tur);
+         this.hasarGucu = 15;
+         this.adimSayisi=2;
+    }
+    
+     public Gargamel(){}
+
+    public int getAdimSayisi() {return adimSayisi;}
+    public void setAdimSayisi(int adimSayisi) {this.adimSayisi = adimSayisi;}
+    public int getHasarGucu() {return hasarGucu;}
+    @Override
+    public void setHasarGucu(int hasarGucu) {this.hasarGucu = hasarGucu;}
+    
+    
+}
+
+
+
+
+
+
+
+
+
+//
+
+package þirinler;
+
+
+public class Gozluklu extends Oyuncu{
+
+  
+    
+  
+    
+    @Override
+    public int getAdimSayisi() {return adimSayisi;}
+    @Override
+    public void setAdimSayisi(int adimSayisi) {this.adimSayisi = adimSayisi;}
+    @Override
+    public int getDayaniklilik() {return Dayaniklilik; }
+    @Override
+    public void setDayaniklilik(int Dayaniklilik) { this.Dayaniklilik = Dayaniklilik;}
+    
+    
+    public Gozluklu() {}
+
+    public Gozluklu(int oyuncuID, String oyuncuAd, String oyuncuTur) {super(oyuncuID, oyuncuAd, oyuncuTur);
+    this.Dayaniklilik=0;
+    this.adimSayisi=2;
+    }
+    
+    
+  
+    
+    
+}
+
+
+
+
+//
+
+
+
+package þirinler;
+
+import static þirinler.yol.rotaHesaplaHazýrlýk;
+
+
+
+public abstract class Karakter {
+    
+    int ID;
+    String Ad;
+    String Tur;
+    int  adimSayisi =1;
+    int lokX;
+    int lokY;
+
+    
+    public Karakter(int ID, String Ad, String Tur) {
+        this.ID = ID;
+        this.Ad = Ad;
+        this.Tur = Tur;
+    }
+    public Karakter(){}
+
+    
+    
+    
+    public void enKisaYol(int startX, int startY){rotaHesaplaHazýrlýk(startX,startY);}
+  
+    public int getID() {return ID; }
+    public void setID(int ID) {this.ID = ID;}
+    public String getAd() { return Ad;}
+    public void setAd(String Ad) { this.Ad = Ad;}
+    public String getTur() {return Tur;}
+    public void setTur(String Tur) {this.Tur = Tur;}
+    public int getLokX() {return lokX;}
+    public void setLokX(int lokX) {this.lokX = lokX;}
+    public int getLokY() {return lokY;}
+    public void setLokY(int lokY) {this.lokY = lokY;}
+    public int getAdimSayisi() {return adimSayisi;}
+    public void setAdimSayisi(int adimSayisi) {this.adimSayisi = adimSayisi;}
+    
+    
+}
+
+
+
+
+
+
+
+//
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package þirinler;
+
+/**
+ *
+ * @author King
+ */
+public class Lokasyon {
+    
+  private  int x;
+  private  int y;
+  private  int yapi; // duvar mý gecit mi finish mi  ; duvarsa 0 gecitse 1
+
+  
+  
+  
+  public int lokasyonKontrol(){
+      
+     
+      if(yapi==0){ // duvarsa 0 dön
+          return 0;}
+      else {return 1; }}
+  
+  
+    public Lokasyon(int x, int y, int yapi) {
+        this.x = x;
+        this.y = y;
+        this.yapi = yapi;
+        
+    }
+
+    public Lokasyon(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public Lokasyon() {
+    }
+
+    
+     public int getYapi() {
+        return yapi;
+    }
+
+    public void setYapi(int yapi) {
+        this.yapi = yapi;
+    }
+
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+//
+
+
+package þirinler;
+
+
+public class Obje {
+    int x,y;
+     int durmaSuresi;
+    int tekrarSuresi;
+    int puan;
+    
+    
+public Obje(int x, int y) { this.x = x; this.y = y;}
+public Obje() {}
+public Obje(int durmaSuresi, int tekrarSuresi, int puan) {
+        this.durmaSuresi = durmaSuresi;
+        this.tekrarSuresi = tekrarSuresi;
+        this.puan = puan;
+    }
+  
+  
+    
+
+    public  void ganimetKullanildi() { this.x = -10; this.y=-10; } // ganimet kullanilince bu fonk ile haritadan atýyoruz karsýlasmamasý için tekrar
+    public int getDurmaSuresi() {return durmaSuresi;}
+    public void setDurmaSuresi(int durmaSuresi) {this.durmaSuresi = durmaSuresi; }
+    public int getTekrarSuresi() {return tekrarSuresi;}
+    public void setTekrarSuresi(int tekrarSuresi) { this.tekrarSuresi = tekrarSuresi;}
+    public int getPuan() {return puan;}
+    public void setPuan(int puan) {this.puan = puan;}  
+    
+    
+    
+    public int getX() {return x;}
+    public void setX(int x) { this.x = x;}
+    public int getY() {return y;}
+    public void setY(int y) {this.y = y; }
+  public void setXY(int x,int y) {this.x = x;  this.y = y;}
+    
+  
+}
+
+
+
+
+
+
+
+//
+
+
+
+package þirinler;
+
+
+
+
+public class Oyuncu extends Karakter{
+    
+       int oyuncuID;
+    String oyuncuAd;
+    String oyuncuTur;
+    
+    int Dayaniklilik=0;
+    int Skor=20;
+
+    public void setBaslangicNoktasi(int x, int y) {
+        this.lokX =x;
+        this.lokY=y;
+    }
+
+
+        public int PuaniGoster(Oyuncu o){return o.Skor;}
+        
+        
+    public Oyuncu(int oyuncuID, String oyuncuAd, String oyuncuTur) {
+        super(oyuncuID, oyuncuAd, oyuncuTur);
+        this.oyuncuID = oyuncuID;
+        this.oyuncuAd = oyuncuAd;
+        this.oyuncuTur = oyuncuTur;}
+
+    public Oyuncu() {}
+    
+
+    
+    
+    
+    public int getOyuncuID() {return oyuncuID;}
+    public void setOyuncuID(int oyuncuID) {this.oyuncuID = oyuncuID;}
+    public String getOyuncuAd() {return oyuncuAd;}
+    public void setOyuncuAd(String oyuncuAd) {this.oyuncuAd = oyuncuAd;}
+    public String getOyuncuTur() {return oyuncuTur;}
+    public void setOyuncuTur(String oyuncuTur) {this.oyuncuTur = oyuncuTur;}
+    public int getSkor() {return Skor;}
+    public void setSkor(int Skor) {this.Skor = Skor;}
+       @Override
+    public int getAdimSayisi() {return adimSayisi;}
+       @Override
+    public void setAdimSayisi(int adimSayisi) {this.adimSayisi = adimSayisi;}
+    public int getDayaniklilik() { return Dayaniklilik;}
+    public void setDayaniklilik(int Dayaniklilik) {this.Dayaniklilik = Dayaniklilik;}
+
+    
+}
+
+
+   
+
+
+
+
+//
+
+
+package þirinler;
+
+
+public class Puan extends Oyuncu{
+    
+    
+     @Override
+     public int PuaniGoster(Oyuncu o){ return o.Skor;}
+     
+     public void PuanGuncelle(Oyuncu o,Dusman d){
+         o.setSkor(o.getSkor() + o.getDayaniklilik() - d.getHasarGucu() );}
+     
+     public void PuanGuncelle(Oyuncu o,Obje ganimet){
+         o.setSkor(o.getSkor() + ganimet.getPuan() );}
+
+   
+}
+
+
+
+
+//
+
+
+
+package þirinler;
+
+
+public class Tembel extends Oyuncu{
+
+  
+
+    
+    @Override
+    public int getAdimSayisi() {return adimSayisi;}
+    @Override
+    public void setAdimSayisi(int adimSayisi) {this.adimSayisi = adimSayisi;}
+    @Override
+    public int getDayaniklilik() {return Dayaniklilik; }
+    @Override
+    public void setDayaniklilik(int Dayaniklilik) { this.Dayaniklilik = Dayaniklilik;}
+    
+    
+    public Tembel() {}
+
+    public Tembel(int oyuncuID, String oyuncuAd, String oyuncuTur) {super(oyuncuID, oyuncuAd, oyuncuTur);}
+    
+    
+  
+    
+    
+}
+
+
+
+
+
+
+//
+
+
+
+
+package þirinler;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.util.Random;
+import java.util.Scanner;
+import javax.swing.*;
+import þirinler.Lokasyon;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.util.Timer;
+import java.util.TimerTask;
+
+
+
+
+public class View extends JFrame{
+
+     
+ 
+ 
+     
+     int flag=0;              // tuslardaki çift algýlama sorunu için 
+     int hamleSirasi=0;       //  tek rakamlarda pc, çift rakamlarda oyuncu oynuyor, hamle sonrasý arttýrýlýyor
+     static int adimTemp=0;   // gozluklunun 2 adým atmasýný saglamak için
+     static int dusmanDurumu; // 0 azman, 1 gargamel , 2 azman + gargamel 
+     static boolean OyunDurumu=true;  // oyun bitince false donecek tuslarý kapatýyor
+     static boolean mazeGosterilsinMi=false;
+  
+   
+   static int [][] maze= new int[11][13];
+   static Lokasyon[][] lokasyon = new Lokasyon[11][13];
+   
+  
+   Toolkit sirine = Toolkit.getDefaultToolkit();
+   Image sirineGoruntu=sirine.getImage("þirinecik.jpg");
+     
+   static Gozluklu gozlukluObje   = new Gozluklu(1,"gozluklu","Oyuncu");
+   static Tembel   tembelObje     = new Tembel  (2,"tembel","Oyuncu");
+   
+   
+   static Gargamel gargamelObje   = new Gargamel(3,"gargamel","Dusman");
+   Toolkit Gargamell = Toolkit.getDefaultToolkit();
+   Image GargamelGoruntu=Gargamell.getImage("gargamel.jpg");
+   static int gargStartX; static int gargStartY;
+   
+   static Azman    azmanObje      = new Azman   (4,"azman","Dusman");
+   Toolkit azmann = Toolkit.getDefaultToolkit();
+   Image azmanGoruntu=azmann.getImage("azman.jpg");
+   static int azmStartX; static int azmStartY;
+    
+    static Oyuncu oyuncuObje     = new Oyuncu(); 
+    static int secim; // 0 sa gözlüjlü 1 se tembel
+    static Toolkit oyuncu = Toolkit.getDefaultToolkit();
+    static Image oyuncuGoruntu;
+   
+   
+   
+   
+   public static void objeRasgeleAtama(Obje o){ // duvar gelirse tekrar deniyor, objelere kordinat atýyor
+       int xx,yy;
+       
+       do{
+         xx=  r.nextInt(13);
+         yy=  r.nextInt(11);
+           
+       }while(lokasyon[yy][xx].lokasyonKontrol()==0);
+       
+       o.setXY(xx, yy);
+   }
+   
+   
+    static Puan     puanObje       = new Puan();
+    
+    
+   static Random r=new Random(); //random sýnýfý
+   
+   
+   
+   static altin altin1 = new altin(-5,-5);
+   static altin altin2 = new altin(-5,-4);
+   static altin altin3 = new altin(-5,-3);
+   static altin altin4 = new altin(-5,-2);
+   static altin altin5 = new altin(-5,-1);
+   
+   static hazine hazine1 = new hazine(-5,0);
+   
+   
+    
+    Toolkit hazinee = Toolkit.getDefaultToolkit();
+    Image hazineGoruntu=hazinee.getImage("hazine.jpg");
+    
+    Toolkit altinn = Toolkit.getDefaultToolkit();
+    Image altinGoruntu=altinn.getImage("gold.jpg");
+    
+    
+ 
+    static boolean altinVarlik=true;
+    static boolean hazineVarlik=true;
+  
+    static Timer altinTimer=new Timer();
+    static Timer hazineTimer=new Timer();
+    
+ static TimerTask altinBaslama =new TimerTask() {
+     @Override
+        public void run() {
+             altinVarlik=true;
+            objeRasgeleAtama(altin1);
+            objeRasgeleAtama(altin2);
+            objeRasgeleAtama(altin3);
+            objeRasgeleAtama(altin4);
+            objeRasgeleAtama(altin5);
+// if(OyunDurumu);{altinTimer.cancel();} // ÝSE YARAMADI BU SAYAC DÖNÜYOR AMA COK SORUN DEGÝL
+ System.out.println("SAYAC DURMADI!!");
+                 }
+             };
+ 
+  static TimerTask altinBitis =new TimerTask(){
+       @Override
+       public void run() {altinVarlik=false;}};
+  
+        
+  
+ static TimerTask hazineBaslama =new TimerTask() {
+     @Override
+        public void run() {
+             hazineVarlik=true;
+            objeRasgeleAtama(hazine1);}};
+ 
+  static TimerTask hazineBitis =new TimerTask(){
+       @Override
+       public void run() {hazineVarlik=false;}};
+  
+        
+   
+   
+    
+  
+  
+  
+   
+   
+   
+    
+    
+    
+ 
+    public View(){
+        setTitle("bulmaca oyunu");
+        setSize(700,500);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  
+    }  
+    
+    
+
+         
+          
+            
+                 
+    
+
+      @Override
+    public void paint(Graphics g)
+        {
+             kare k = new kare();
+             yol yolBulucu = new yol(maze);
+             int uzaklikG=0;
+             int uzaklikA=0;
+             
+           
+            
+            
+            super.paint(g); g.translate(100, 100);
+            
+            for(int row =0; row<maze.length;row++)
+            {
+                for(int col=0;col<maze[0].length;col++)
+                {
+                    Color color;
+                    
+                    switch(maze[row][col]){        
+                    case 1: color = Color.WHITE; break;
+                    case 0: color = Color.gray; break;
+                    default: color = Color.BLUE;
+      
+                   
+                    }
+                       if(row==5 && col==6)
+                        color = Color.BLUE;
+                       
+                    g.setColor(color);
+                    g.fillRect(30*col,30*row, 30, 30);
+                    g.setColor(Color.BLACK);
+                    g.drawRect(30*col,30*row, 30, 30);
+                    
+                }
+            }
+  
+
+            // altýný ve hazineyi 2 kere ciziyoruz alýnýrsa kaybolsun diye 1. cizim
+if(altinVarlik){
+             g.drawImage(altinGoruntu,altin1.getX()*30,altin1.getY()*30,this);
+             g.drawImage(altinGoruntu,altin2.getX()*30,altin2.getY()*30,this); 
+             g.drawImage(altinGoruntu,altin3.getX()*30,altin3.getY()*30,this); 
+             g.drawImage(altinGoruntu,altin4.getX()*30,altin4.getY()*30,this); 
+             g.drawImage(altinGoruntu,altin5.getX()*30,altin5.getY()*30,this); 
+                
+            }               
+if(hazineVarlik){g.drawImage(hazineGoruntu,hazine1.getX()*30,hazine1.getY()*30,this); }
+
+    
+ 
+       
+       
+
+       
+          
+            
+                                // oyun basýnda kýsa yolu veriyor , çift oynayýsta 1. onamadan sonra kýsayolu veriyor
+if( hamleSirasi%2==0){  
+    switch(dusmanDurumu){
+  
+case 0 :{ // baslangic azman kisa yol verir + mesafe yazar
+            yolBulucu.rotaHesaplaHazýrlýk(azmanObje.getLokY(),azmanObje.getLokX());            
+            uzaklikA = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik();
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki();
+            for(int aa=0; aa<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik() ; aa++){
+            g.fillRect(30*k.getY(),30*k.getX(), 28, 28); g.setColor(Color.LIGHT_GRAY);
+            if(k.getOnceki()==null) {break;} else {k = k.getOnceki();}}break;} 
+case 1 :{ // baslangic gargamel kisa yol verir + mesafe yazar
+            yolBulucu.rotaHesaplaHazýrlýk(gargamelObje.getLokY(),gargamelObje.getLokX());
+            uzaklikG=yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik();
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki();
+            for(int aa=0; aa<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik() ; aa++){
+            g.fillRect(30*k.getY(),30*k.getX(), 28, 28); g.setColor(Color.red);
+            if(k.getOnceki()==null) {break;} else {k = k.getOnceki();}}break;}
+case 2 :{ // baslangic azman + gargamel kisa yol verir + mesafe yazar
+            yolBulucu.rotaHesaplaHazýrlýk(azmanObje.getLokY(),azmanObje.getLokX());
+            uzaklikA = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik();
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki();
+            for(int aa=0; aa<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik() ; aa++){
+            g.fillRect(30*k.getY(),30*k.getX(), 28, 28); g.setColor(Color.LIGHT_GRAY);
+            if(k.getOnceki()==null) {break;} else {k = k.getOnceki();}}
+    
+            yolBulucu.rotaHesaplaHazýrlýk(gargamelObje.getLokY(),gargamelObje.getLokX());
+            uzaklikG=yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik();
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki();
+            for(int aa=0; aa<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik() ; aa++){
+            g.fillRect(30*k.getY(),30*k.getX(), 28, 28); g.setColor(Color.red);
+            if(k.getOnceki()==null) {break;} else {k = k.getOnceki();}}break;}
+    }}
+                         
+                                
+        
+            
+          // OYUNCU HAREKETLERÝ ++ puan durumu ++ sirine kontrol
+                      
+                      
+                      // azmanýn üstüne gidersek 
+ if(oyuncuObje.getLokX()==azmanObje.getLokX() && oyuncuObje.getLokY()==azmanObje.getLokY()){        // puan düþer + gaegameli kapýya atar
+      azmanObje.setLokX(azmStartX);azmanObje.setLokY(azmStartY);                                     // dusman baslangýc kordinatlarý ile degismeli 
+      puanObje.PuanGuncelle(oyuncuObje, azmanObje);
+      hamleSirasi++;}
+                      
+                      //gargamellin üstüne gidersek
+  if(oyuncuObje.getLokX()==gargamelObje.getLokX() && oyuncuObje.getLokY()==gargamelObje.getLokY()){
+     gargamelObje.setLokX(gargStartX);gargamelObje.setLokY(gargStartY);
+     puanObje.PuanGuncelle(oyuncuObje, gargamelObje);
+     hamleSirasi++;}
+                      // sirineye ulasýrsak
+                      
+  if(oyuncuObje.getLokX()==12 && oyuncuObje.getLokY()==7){          
+               g.setColor(Color.CYAN);
+               g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+               g.drawString(" Kahramaným!!", 400, 210);
+                g.setColor(Color.GREEN);
+               g.setFont(new Font("TimesRoman", Font.PLAIN, 25));
+               g.drawString(" KAZANDIN!!", 150, -20);
+   OyunDurumu=false;
+  }
+            
+            
+              
+         // DÜSMAN HAREKETLERÝ 
+         if(hamleSirasi%2==1){
+            
+
+switch(dusmanDurumu){
+   case 0:{ // azman oyuncu hamlesi sonrasý rota hesaplar - ekrana basar- oynar
+       
+            yolBulucu.rotaHesaplaHazýrlýk(azmanObje.getLokY(),azmanObje.getLokX());
+            uzaklikA=yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik()-1;
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki();
+            for(int aa=azmanObje.getAdimSayisi()-1; aa<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki().getAgirlik() ; aa++){
+            g.fillRect(30*k.getY(),30*k.getX(), 28, 28); g.setColor(Color.LIGHT_GRAY);
+            if(k.getOnceki()==null) {break;} else {k = k.getOnceki();}}
+            
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()];
+            for(int z=azmanObje.getAdimSayisi(); z<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik(); z++){k=k.getOnceki();}
+            azmanObje.setLokX(k.getY());azmanObje.setLokY(k.getX());
+  hamleSirasi++;break;}
+                
+                
+   case 1:{// gargamel oyuncu hamlesi sonrasý rota hesaplar - ekrana basar- oynar
+            yolBulucu.rotaHesaplaHazýrlýk(gargamelObje.getLokY(),gargamelObje.getLokX());
+            uzaklikG=yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik()-2;
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki();
+            for(int aa=gargamelObje.getAdimSayisi()-1; aa<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki().getAgirlik() ; aa++){
+            g.fillRect(30*k.getY(),30*k.getX(), 28, 28); g.setColor(Color.red);
+            if(k.getOnceki()==null) {break;} else {k = k.getOnceki();}}
+            
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()];
+            for(int z=gargamelObje.getAdimSayisi(); z<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik(); z++){k=k.getOnceki();}
+            gargamelObje.setLokX(k.getY());gargamelObje.setLokY(k.getX()); 
+       
+       hamleSirasi++; break;}
+                       
+                
+                
+   case 2:{// azman + gargamel oyuncu hamlesi sonrasý rota hesaplar - ekrana basar- oynar
+       
+            yolBulucu.rotaHesaplaHazýrlýk(azmanObje.getLokY(),azmanObje.getLokX());
+            uzaklikA = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik()-1;
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki();
+            for(int aa=azmanObje.getAdimSayisi()-1; aa<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki().getAgirlik() ; aa++){
+            g.fillRect(30*k.getY(),30*k.getX(), 28, 28); g.setColor(Color.LIGHT_GRAY);
+            if(k.getOnceki()==null) {break;} else {k = k.getOnceki();}}
+            
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()];
+            for(int z=azmanObje.getAdimSayisi(); z<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik(); z++){k=k.getOnceki();}
+            
+            azmanObje.setLokX(k.getY());azmanObje.setLokY(k.getX());
+            
+            
+            
+            yolBulucu.rotaHesaplaHazýrlýk(gargamelObje.getLokY(),gargamelObje.getLokX());
+            uzaklikG=yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik()-2;
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki();
+            for(int aa=gargamelObje.getAdimSayisi()-1; aa<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getOnceki().getAgirlik() ; aa++){
+            g.fillRect(30*k.getY(),30*k.getX(), 28, 28); g.setColor(Color.red);
+            if(k.getOnceki()==null) {break;} else {k = k.getOnceki();}}
+            
+            k = yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()];
+            for(int z=gargamelObje.getAdimSayisi(); z<yolBulucu.kareMatrisi[oyuncuObje.getLokY()][oyuncuObje.getLokX()].getAgirlik(); z++){k=k.getOnceki();}
+            gargamelObje.setLokX(k.getY());gargamelObje.setLokY(k.getX());
+           
+            hamleSirasi++; break;
+             
+    }}}
+       
+         
+         
+                           
+         
+                                                     // puan durumu
+                      
+                                                     // altinla karsilasirsa puan ekler kordinatlarý deðistirip ekrandan atar
+                                                     
+if(altinVarlik){
+ if(oyuncuObje.getLokX()==altin1.getX() && oyuncuObje.getLokY()==altin1.getY()){puanObje.PuanGuncelle(oyuncuObje,altin1); altin1.ganimetKullanildi(); System.out.println("Altýn kazandýn"); }
+  if(oyuncuObje.getLokX()==altin2.getX() && oyuncuObje.getLokY()==altin2.getY()){puanObje.PuanGuncelle(oyuncuObje,altin2); altin2.ganimetKullanildi(); System.out.println("Altýn kazandýn"); }          
+    if(oyuncuObje.getLokX()==altin3.getX() && oyuncuObje.getLokY()==altin3.getY()){puanObje.PuanGuncelle(oyuncuObje,altin3); altin3.ganimetKullanildi(); System.out.println("Altýn kazandýn"); }
+     if(oyuncuObje.getLokX()==altin4.getX() && oyuncuObje.getLokY()==altin4.getY()){puanObje.PuanGuncelle(oyuncuObje,altin4); altin4.ganimetKullanildi(); System.out.println("Altýn kazandýn"); }
+      if(oyuncuObje.getLokX()==altin5.getX() && oyuncuObje.getLokY()==altin5.getY()){puanObje.PuanGuncelle(oyuncuObje,altin5); altin5.ganimetKullanildi(); System.out.println("Altýn kazandýn"); }
+             g.drawImage(altinGoruntu,altin1.getX()*30,altin1.getY()*30,this);
+             g.drawImage(altinGoruntu,altin2.getX()*30,altin2.getY()*30,this); 
+             g.drawImage(altinGoruntu,altin3.getX()*30,altin3.getY()*30,this); 
+             g.drawImage(altinGoruntu,altin4.getX()*30,altin4.getY()*30,this); 
+             g.drawImage(altinGoruntu,altin5.getX()*30,altin5.getY()*30,this); 
+                
+            }
+                                                     
+ if(hazineVarlik){
+ if(oyuncuObje.getLokX()==hazine1.getX() && oyuncuObje.getLokY()==hazine1.getY())
+ {puanObje.PuanGuncelle(oyuncuObje,hazine1); hazine1.ganimetKullanildi(); System.out.println("hazine kazandýn"); }
+ g.drawImage(hazineGoruntu,hazine1.getX()*30,hazine1.getY()*30,this);}                                                    
+                      
+ 
+ 
+ 
+                      // azmanla karsýlasýrsa
+if(oyuncuObje.getLokX()==azmanObje.getLokX() && oyuncuObje.getLokY()==azmanObje.getLokY()){
+azmanObje.setLokX(azmStartX);azmanObje.setLokY(azmStartY);
+puanObje.PuanGuncelle(oyuncuObje, azmanObje); }
+                      
+
+                    // gargamel ile karsýlasýrsa puan düser gargameli uerine yollar
+if(oyuncuObje.getLokX()==gargamelObje.getLokX() && oyuncuObje.getLokY()==gargamelObje.getLokY()){
+gargamelObje.setLokX(gargStartX);gargamelObje.setLokY(gargStartY);
+puanObje.PuanGuncelle(oyuncuObje, gargamelObje);}
+                      
+         
+                      
+                      // puan 0 olursa bitirir 
+        
+              if(puanObje.PuaniGoster(oyuncuObje)<=0){ OyunDurumu=false;
+               g.setColor(Color.red);
+               g.setFont(new Font("TimesRoman", Font.PLAIN, 25));
+               g.drawString(" KAYBETTÝN!!", 150, -20);
+              }        
+              
+              
+              // UZAKLIKLARI GÖSTERME
+              switch(dusmanDurumu){
+                  
+                  case 0:   {
+             g.setColor(Color.DARK_GRAY);
+             g.setFont(new Font("TimesRoman", Font.PLAIN, 15));
+             g.drawString("Azmanýn uzaklýðý " + uzaklikA, 410, 50);
+             break;
+         }
+                  case 1:  {
+             g.setColor(Color.RED);
+             g.setFont(new Font("TimesRoman", Font.PLAIN, 15));
+             g.drawString("Gargamelin uzaklýðý " + uzaklikG, 410, 30);
+             break;
+         } 
+                  
+                  case 2:{
+                      {
+             g.setColor(Color.RED);
+             g.setFont(new Font("TimesRoman", Font.PLAIN, 15));
+             g.drawString("Gargamelin uzaklýðý " + uzaklikG, 410, 30);
+             
+         }
+                         {
+             g.setColor(Color.DARK_GRAY);
+             g.setFont(new Font("TimesRoman", Font.PLAIN, 15));
+             g.drawString("Azmanýn uzaklýðý " + uzaklikA, 410, 50);
+             
+         }
+                      break;
+                  }  
+            
+            
+                      
+              }
+            
+              
+              
+                   ///SKOR GÖSTERME
+         {
+             g.setColor(Color.green);
+             g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+             g.drawString("SKOR => " + oyuncuObje.getSkor(), 410, 0);
+             
+         }
+                      
+                                 ///  ikonlarý gösterme
+switch(dusmanDurumu){
+   case 0:{ g.drawImage(azmanGoruntu,azmanObje.getLokX()*30,azmanObje.getLokY()*30,this);break;}
+   case 1:{g.drawImage(GargamelGoruntu,gargamelObje.getLokX()*30,gargamelObje.getLokY()*30,this);break;}
+   case 2:{ g.drawImage(azmanGoruntu,azmanObje.getLokX()*30,azmanObje.getLokY()*30,this);
+            g.drawImage(GargamelGoruntu,gargamelObje.getLokX()*30,gargamelObje.getLokY()*30,this);break;}
+}
+       
+         g.drawImage(oyuncuGoruntu,oyuncuObje.getLokX()*30,oyuncuObje.getLokY()*30,this);  
+         g.drawImage(sirineGoruntu,360,210,this);
+         
+         
+        
+        
+         
+        }
+   
+             
+     @Override
+   protected void processKeyEvent(KeyEvent e)
+   {
+       
+  if(e.getKeyCode()==KeyEvent.VK_LEFT && OyunDurumu==true){  
+           flag++;if(flag%2==0) {System.out.println("solll");
+           adimTemp++ ;oyuncuObje.setLokX(oyuncuObje.getLokX()-1);
+           if(oyuncuObje.getLokX() <0){oyuncuObje.setLokX(0);}  // sol kapýndan sola kaçmamasý için
+           if( lokasyon[oyuncuObje.getLokY()][oyuncuObje.getLokX()].lokasyonKontrol()==1){repaint(); }
+           else { oyuncuObje.setLokX(oyuncuObje.getLokX()+1);repaint();}}
+           if(oyuncuObje.getAdimSayisi()-adimTemp==0){ hamleSirasi++; adimTemp=0;repaint();} 
+  
+  }
+       
+       
+       if(e.getKeyCode()==KeyEvent.VK_RIGHT && OyunDurumu==true){ 
+           
+           flag++;if(flag%2==0) {System.out.println("saggg");
+           adimTemp++ ;oyuncuObje.setLokX(oyuncuObje.getLokX()+1);
+           if(oyuncuObje.getLokX() >12){oyuncuObje.setLokX(12);}  // sag kapýndan sag kaçmamasý için
+           if( lokasyon[oyuncuObje.getLokY()][oyuncuObje.getLokX()].lokasyonKontrol()==1){repaint(); }
+           else { oyuncuObje.setLokX(oyuncuObje.getLokX()-1);repaint();}}
+           if(oyuncuObje.getAdimSayisi()-adimTemp==0){ hamleSirasi++; adimTemp=0;repaint();}
+ 
+       } 
+       
+       
+         
+         if(e.getKeyCode()==KeyEvent.VK_UP && OyunDurumu==true){ 
+             
+           flag++;if(flag%2==0) {System.out.println("yularii");
+           adimTemp++ ;oyuncuObje.setLokY(oyuncuObje.getLokY()-1);
+           if(oyuncuObje.getLokY() <0){oyuncuObje.setLokY(0);}  // yukarý kapýndan  kaçmamasý için
+           if( lokasyon[oyuncuObje.getLokY()][oyuncuObje.getLokX()].lokasyonKontrol()==1){repaint(); }
+           else { oyuncuObje.setLokY(oyuncuObje.getLokY()+1);repaint();}}
+           if(oyuncuObje.getAdimSayisi()-adimTemp==0){ hamleSirasi++; adimTemp=0;repaint();}  
+             
+         
+         }
+           
+         if(e.getKeyCode()==KeyEvent.VK_DOWN && OyunDurumu==true){  
+             
+           flag++;if(flag%2==0) {System.out.println("ASSAA");
+           adimTemp++ ;oyuncuObje.setLokY(oyuncuObje.getLokY()+1);
+           if(oyuncuObje.getLokY() >10){oyuncuObje.setLokY(10);}  // sag kapýndan sag kaçmamasý için
+           if( lokasyon[oyuncuObje.getLokY()][oyuncuObje.getLokX()].lokasyonKontrol()==1){repaint(); }
+           else { oyuncuObje.setLokY(oyuncuObje.getLokY()-1);repaint();}}
+           if(oyuncuObje.getAdimSayisi()-adimTemp==0){ hamleSirasi++; adimTemp=0;repaint();}
+             
+
+         }  
+  
+         
+   }
+   
+  
+    public static void baslangic(){
+              
+    JFrame frame=new JFrame("SEÇÝM EKRANI");  
+    
+    Image iconc = Toolkit.getDefaultToolkit().getImage("gold1.png");  
+    frame.setIconImage(iconc);
+    
+    JButton gozluklu=new JButton();  
+    JButton tembel=new JButton();  
+    
+    gozluklu.setBounds(50,100,200,300);  
+    tembel.setBounds(330,100,200,300);
+    
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+    frame.add(gozluklu);  
+    
+    frame.add(tembel);
+    frame.setSize(600,600);  
+    
+    frame.setLayout(null);  
+    frame.setVisible(true);   
+    
+    frame.getContentPane().setBackground(Color.lightGray);
+     
+      ImageIcon icon1 = new ImageIcon("gozluklu1.png");
+      gozluklu.setIcon(icon1);
+
+      ImageIcon icon2 = new ImageIcon("tembel1.png");
+      tembel.setIcon(icon2);
+
+do{
+      gozluklu.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+          secim=0; mazeGosterilsinMi=true;frame.setVisible(false);
+             
+        }
+    });
+
+    
+      tembel.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+          secim=1;mazeGosterilsinMi=true;frame.setVisible(false);
+        }
+    });
+      
+        try {Thread.sleep(2000);} catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+
+}
+while(mazeGosterilsinMi==false);
+        
+    }
+    
+    public static void main(String[] args) {
+      baslangic();
+    
+
+       int yapi; // LOKASYON MATRÝSÝNÝ OLUSUTURUKEN KULLANIYORUZ ASSAÐIDA
+      
+  
+       // azmanObje.setAdimSayisi(5);// azmaný adým sayisini 0 yapabiliriz
+       hazine1.setPuan(1000);  // hazineler 1000 puan
+      
+      //  hazine1.setDurmaSuresi(2000);    
+      // hazine1.setTekrarSuresi(5000);       hazine 5 sn de bir çýksýn 2 sn kalsýn
+       
+ 
+      
+      if(secim==0){
+          //  gözlüklü seçilirse
+          oyuncuObje = gozlukluObje;
+          oyuncuGoruntu=oyuncu.getImage("gözlüklüm.jpg");
+      }
+      else if(secim==1){
+          // tembel seçilirse
+          oyuncuObje = tembelObje; 
+          oyuncuGoruntu=oyuncu.getImage("tembel.jpg");
+        }
+      
+      
+      oyuncuObje.setBaslangicNoktasi(6, 5);       // baslangic noktasi burada atandý  X - Y  
+      
+ 
+        
+                hazineTimer.schedule(hazineBaslama,500,hazine1.getTekrarSuresi()); // hazine açma 
+                hazineTimer.schedule(hazineBitis,hazine1.getDurmaSuresi()+500,hazine1.getTekrarSuresi()); // hazine kapatma
+                
+                altinTimer.schedule(altinBaslama,500,altin1.getTekrarSuresi()); // altýn açma 
+                altinTimer.schedule(altinBitis,altin1.getDurmaSuresi()+500,altin1.getTekrarSuresi()); // altýn kapatma
+                
+                
+   
+       
+       
+     // C:\\Users\\PC\\Desktop\\pro lab 2\\harita.txt
+       
+      
+        int m = 11;
+        int n = 13;
+        
+        
+        String g1= "Karakter:Gargamel,Kapi:A";                                                   
+        String g2= "Karakter:Gargamel,Kapi:B";                 
+        String g3= "Karakter:Gargamel,Kapi:C";                                                   
+        String g4= "Karakter:Gargamel,Kapi:D"; 
+                                                   
+        String a1= "Karakter:Azman,Kapi:A";                                                   
+        String a2= "Karakter:Azman,Kapi:B";                 
+        String a3= "Karakter:Azman,Kapi:C";                                                   
+        String a4= "Karakter:Azman,Kapi:D";  
+          
+        
+          File file = new File("C:\\Users\\King\\Desktop\\harita.txt");
+          int lineNum = 0;
+        
+        
+          try {
+    Scanner scanner = new Scanner(file);
+    Scanner scan = new Scanner(file);
+     Scanner scani = new Scanner(file);
+    //now read the file line by line...
+   
+    while (scanner.hasNextLine()) {
+ 
+        String line = scanner.nextLine();
+ if(line.equals(g1)) {lineNum++;}
+ if(line.equals(g2)) {lineNum++;}
+ if(line.equals(g3)) {lineNum++;}
+ if(line.equals(g4)) {lineNum++;}
+ if(line.equals(a1)) {lineNum++;}
+ if(line.equals(a2)) {lineNum++; }
+ if(line.equals(a3)) {lineNum++; }
+ if(line.equals(a4)) {lineNum++;}  }
+
+    //**************************************************************
+    
+    // iki tane düþman karakter varsa burayý kullanýr. 1 azman + 1 gargamel 
+     if(lineNum==2) 
+    {
+        dusmanDurumu =2;
+         int sayac=0;
+        
+         
+     while (scani.hasNextLine()) {
+        String lini = scani.nextLine();
+        
+        sayac++;
+        
+ 
+        if(lini.equals(g1)) { 
+            System.out.println(g1 +" "+lineNum); //buralardan hangi karakterin nerede olduðunu anlýyoruz, konumlarýný belirleyeceðiz.
+           gargamelObje.setLokX(3);gargamelObje.setLokY(0);  // A KAPIOSI 
+           gargStartX= 3;gargStartY= 0;}
+        
+        if(lini.equals(g2)) { 
+            System.out.println(g2 +" "+lineNum);
+            gargStartX= 10;gargStartY= 0;
+            gargamelObje.setLokX(10);gargamelObje.setLokY(0);             // B
+        }
+            if(lini.equals(g3)) { 
+            System.out.println(g3 +" "+lineNum);
+            gargStartX= 0; gargStartY= 5;
+            gargamelObje.setLokX(0);gargamelObje.setLokY(5);               // C 
+            }
+              if(lini.equals(g4)) { 
+            System.out.println(g4 +" "+ lineNum);
+            gargStartX= 3; gargStartY= 10;
+            gargamelObje.setLokX(3);gargamelObje.setLokY(10);                  // D
+              }
+   
+    
+   
+   
+            if(lini.equals(a1)) { 
+            System.out.println(a1 +" "+lineNum);
+            azmStartX= 3;azmStartY= 0;
+            azmanObje.setLokX(3);azmanObje.setLokY(0);          // A KAPISI
+            }
+            if(lini.equals(a2)) { 
+            System.out.println(a2 +" "+lineNum);
+            azmStartX= 10;azmStartY= 0;
+            azmanObje.setLokX(10);azmanObje.setLokY(0);             // B
+            }
+            if(lini.equals(a3)) { 
+            System.out.println(a3 +" "+lineNum);
+            azmStartX= 0;azmStartY= 5;
+            azmanObje.setLokX(0);azmanObje.setLokY(5);               // C 
+            }
+              if(lini.equals(a4)) { 
+            System.out.println(a4 +" "+ lineNum);
+            azmStartX= 3;azmStartY= 10;
+            azmanObje.setLokX(3);azmanObje.setLokY(10);                  // D
+              }
+        
+              
+    if(sayac==2){
+                for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                 
+            maze[i][j] = scani.nextInt();
+            // System.out.println("number is "+ maze[i][j]);
+              if( maze[i][j]==0){yapi=0;}
+              else {yapi = 1;}
+              lokasyon[i][j] = new Lokasyon(i,j,yapi);
+              System.out.print(" " +maze[i][j]);
+                }
+                System.out.println("\n");  
+            }       
+ 
+    }
+ 
+
+    }
+
+        
+    }
+    
+    //**************************************************************
+    
+
+    if(lineNum==1) // tek bir düþman karakter varsa burayý kullanýr. 1 gargamel ya da 1 azman.
+    {
+       
+     while (scan.hasNextLine()) {
+        String lin = scan.nextLine();
+
+               
+     
+   
+     
+        
+        
+        if(lin.equals(g1)) { 
+            System.out.println(g1 +" "+lineNum); //buralardan hangi karakterin nerede olduðunu anlýyoruz, konumlarýný belirleyeceðiz.
+           dusmanDurumu =1; gargStartX= 3;gargStartY= 0;
+           gargamelObje.setLokX(3);gargamelObje.setLokY(0);             // A KAPIOSI 
+        }
+          if(lin.equals(g2)) { 
+            System.out.println(g2 +" "+lineNum);
+            gargStartX= 10;gargStartY= 0;dusmanDurumu =1;
+            gargamelObje.setLokX(10);gargamelObje.setLokY(0);             // B
+           
+        }
+            if(lin.equals(g3)) { 
+            System.out.println(g3 +" "+lineNum);
+            gargStartX= 0;gargStartY= 5; dusmanDurumu =1;
+            gargamelObje.setLokX(0);gargamelObje.setLokY(5);               // C 
+            }
+              if(lin.equals(g4)) { 
+            System.out.println(g4 +" "+ lineNum);
+            gargStartX= 3;gargStartY= 10;dusmanDurumu =1;
+           gargamelObje.setLokX(3);gargamelObje.setLokY(10);                  // D
+              }
+       
+            if(lin.equals(a1)) { 
+            System.out.println(a1 +" "+lineNum);
+            azmStartX= 3;azmStartY= 0;dusmanDurumu =0;
+           azmanObje.setLokX(3);azmanObje.setLokY(0);             // A KAPIOSI
+            }
+            if(lin.equals(a2)) { 
+            System.out.println(a2 +" "+lineNum);
+            azmStartX= 10; azmStartY= 0;dusmanDurumu =0;
+            azmanObje.setLokX(10);azmanObje.setLokY(0);             // B
+            }
+            if(lin.equals(a3)) { 
+            System.out.println(a3 +" "+lineNum);
+            azmStartX= 0; azmStartY= 5;dusmanDurumu =0;
+            azmanObje.setLokX(0);azmanObje.setLokY(5);               // C 
+            }
+              if(lin.equals(a4)) { 
+            System.out.println(a4 +" "+ lineNum);
+            azmStartX= 3; azmStartY= 10;dusmanDurumu =0;
+            azmanObje.setLokX(3);azmanObje.setLokY(10); 
+        
+              }
+        
+                for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                 
+            maze[i][j] = scan.nextInt();
+            // System.out.println("number is "+ maze[i][j]);
+                
+                 if( maze[i][j]==0){yapi=0;}
+                 else {yapi = 1;}
+                    lokasyon[i][j] = new Lokasyon(i,j,yapi);
+         System.out.print(" "+maze[i][j]);
+                }
+                System.out.println("\n");  
+            }       
+    }
+    
+    } 
+            mazeGosterilsinMi=true;
+       SwingUtilities.invokeLater(new Runnable() {
+           @Override
+           public void run() {
+               View view = new View();
+               view.setVisible(mazeGosterilsinMi);
+           }
+       }); 
+    
+    
+}  catch (Exception e) {
+        e.printStackTrace();
+    }
+    }}
+
+
+
+
+
+
+//
+
+
+
+
+package þirinler;
+
+
+public class altin extends Obje{
+
+    public altin(int durmaSuresi, int tekrarSuresi, int puan) {
+        super(durmaSuresi, tekrarSuresi, puan);
+    }
+
+    public altin() { super(4950, 10000, 5);}
+
+    public altin(int x, int y) {
+        super(4950, 10000, 5);
+        this.x=x;
+        this.y=y;
+        
+    }
+     
+    
+    
+}
+
+
+
+
+
+
+//
+
+
+
+package þirinler;
+
+
+public class hazine extends Obje{
+
+    public hazine(int durmaSuresi, int tekrarSuresi, int puan) {
+        super(durmaSuresi, tekrarSuresi, puan);
+    }
+
+    public hazine() { super(6950, 20000, 50);}
+
+    public hazine(int x, int y) {
+        super(6950, 20000, 50);
+        this.x=x;
+        this.y=y;
+        
+    }
+     
+    
+    
+}
+
+
+
+
+
+//
+
+
+
+
+package þirinler;
+
+
+import java.util.ArrayList;
+
+
+public class yol {
+    
+   static kare kareMatrisi[][] = new kare[11][13];
+  static  int costMatris[][][][][] = new int[11][13][11][13][1];
+  static   int haritaMatrisi[][] = new int[11][13];
+    
+    public yol(){ // harita
+        // cost matris için harita matrisini de göndereceðiz simdilik konsoldan okuyorum
+        // haritaMatrisi = harita; gibi
+        kareMatrisi();
+        costmatrishesapla();
+        }
+    yol(int[][] maze) {
+        haritaMatrisi = maze;
+        kareMatrisi();
+        costmatrishesapla();
+    
+    }
+  public static void rotaHesaplaHazýrlýk(int startx, int starty){
+        
+       kareMatrisiTemizle();
+       kareMatrisi[startx][starty].setAgirlik(0);
+       rotaHesapla(startx, starty);
+    }
+  
+  
+  
+     static void rotaHesapla(int startx, int starty){
+     
+       kareMatrisi[startx][starty].setKullanildiMi(true); // konum kullanýldý olarak isaretlendi
+       
+        for (int i = 0; i < 11; i++) {                      // costmatriste gidebileceði her nokta bulunuyor ve güncelleniyor
+            for (int j = 0; j <13; j++) {
+                
+                if (kareMatrisi[i][j].isKullanildiMi()==false
+                   &&  kareMatrisi[startx][starty].getAgirlik()+ costMatris[startx][starty][i][j][0] < kareMatrisi[i][j].getAgirlik()
+                        ){
+                    kareMatrisi[i][j].setAgirlik(kareMatrisi[startx][starty].getAgirlik() + costMatris[startx][starty][i][j][0]) ;
+                    kareMatrisi[i][j].setOnceki(kareMatrisi[startx][starty]);
+                }}}kareMatrisMinBul(); }
+      
+      
+      static  void kareMatrisi() {
+
+        for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 13; j++) {
+                kareMatrisi[i][j] = new kare();
+                kareMatrisi[i][j].setX(i);kareMatrisi[i][j].setY(j);
+            } } }
+        
+        
+        
+public static void kareMatrisiTemizle() {
+
+        for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 13; j++) {
+               
+                if(haritaMatrisi[i][j]==0){kareMatrisi[i][j].setAgirlik(-1); kareMatrisi[i][j].setKullanildiMi(true);}
+                else{kareMatrisi[i][j].setAgirlik(999);kareMatrisi[i][j].setKullanildiMi(false);kareMatrisi[i][j].setOnceki(null); }
+            }}}
+         
+         
+         
+ static void kareMatrisMinBul(){
+    int flag=0;
+     int temp =999;
+     int tempx = 0,tempy = 0;
+       for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 13; j++) {
+                if(kareMatrisi[i][j].isKullanildiMi()==false && haritaMatrisi[i][j]==1) flag++;{}
+                if(kareMatrisi[i][j].isKullanildiMi()==false && kareMatrisi[i][j].getAgirlik() < temp ){
+                    tempx=i;tempy=j;
+                    temp=kareMatrisi[i][j].getAgirlik();
+                  }}}
+       if(flag==0){return;}
+       rotaHesapla(tempx,tempy);
+                         }
+ 
+ 
+ 
+ 
+   static   void costmatrishesapla() {
+
+        for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 13; j++) {
+                
+                for (int k = 0; k < 11; k++) {
+                    for (int l = 0; l < 13; l++) {
+                        costMatris[i][j][k][l][0] = 999;
+                        
+                        if(j==l && k==i+1 && haritaMatrisi[k][l] == 1){costMatris[i][j][k][l][0]=1;} // alt
+                        if(j==l && i==k+1 && haritaMatrisi[k][l] == 1){costMatris[i][j][k][l][0]=1;}
+                        if(i==k && l==j+1 && haritaMatrisi[k][l] == 1){costMatris[i][j][k][l][0]=1;}
+                        if(i==k && j==l+1 && haritaMatrisi[k][l] == 1){costMatris[i][j][k][l][0]=1;} //SOL
+                        if(i==k && j==l && haritaMatrisi[k][l] == 1 ){costMatris[i][j][k][l][0]=0;} // kendi ise
+                    } }} }}
+
+      
+      
+      
+      
+      
+      public static void main(String[] args){
+       
+        yol yolBulucu = new yol();
+        
+        yolBulucu.rotaHesaplaHazýrlýk(0,10);
+          
+        
+        System.out.print(yolBulucu.kareMatrisi[0][10].getAgirlik() + " aaaaaaaaaaaaaaaaaaaaaaaaa");
+        System.out.println();
+        
+          for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 13; j++) {
+                System.out.print(yolBulucu.kareMatrisi[i][j].getAgirlik() + "   ");
+            }
+            System.out.println();
+        }
+          // System.out.print(yol.dugumDizisi[5][6].agýrlýk + " ");
+           // nereden geldi 
+           kare k = new kare();
+           k = yolBulucu.kareMatrisi[5][6];
+           for(int i=0; i<yolBulucu.kareMatrisi[5][6].getAgirlik() ; i++){
+              
+               System.out.print(k.getX() + " " + k.getY());
+              System.out.println();
+              k = k.getOnceki();
+            //  if (k.onceki==null){break;}
+              
+              
+           }
+           
+             for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 13; j++) {
+                System.out.print(yolBulucu.kareMatrisi[i][j].isKullanildiMi());
+            }
+            System.out.println();
+        }
+    }
+
+   
+      
+      
+      
+      
+}
+
+class kare{
+    
+    private int x;
+    private int y;
+    private int agirlik;
+    private  boolean kullanildiMi = false;
+    private kare onceki=null;
+    
+    public kare() {}
+    public kare(int y, kare onceki) {this.y = y;this.onceki = onceki;}
+    
+    public boolean isKullanildiMi() {return kullanildiMi;}
+    public void setKullanildiMi(boolean kullanildiMi) {this.kullanildiMi = kullanildiMi;}
+    public int getAgirlik() {return agirlik;}
+    public void setAgirlik(int agirlik) {this.agirlik = agirlik;}
+    public kare getOnceki() {return onceki;}
+    public void setOnceki(kare onceki) {this.onceki = onceki;}
+    public int getX() {return x;}
+    public void setX(int x) {this.x = x;}
+    public int getY() { return y;}
+    public void setY(int y) {this.y = y;}
+
+
+    }
+  
+
+
+//
+
+
+
+
+
+
+
+
+
