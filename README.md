@@ -36,6 +36,9 @@ Puan durumu güncel olarak hesaplanmakta, ve ekrana yansıtılmaktadır. Oyun ş
 
 <img width="513" alt="Screenshot_7" src="https://user-images.githubusercontent.com/43906043/175386882-836376df-0837-432b-8379-529650e75aa7.png">
 
+<img width="617" alt="Screenshot_8" src="https://user-images.githubusercontent.com/43906043/175388526-b8567ca3-bd56-4cd8-a6b7-dda1cbb4a9c5.png">
+harita bilgileri duvarları, gargamel'in ve azman'ın pozisyonunu belirleyen koordinatları içermektedir ve değiştirilebilir.
+
 ## SONUÇ :
 
 tembel ya da gözlüklü şirini seçebildiğimiz bir ekranla oyuna başlarız. seçimimizi yaptıktan sonra oyun ekranı(görsel harita) karşımıza çıkar. bu ekran dosya 
